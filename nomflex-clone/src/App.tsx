@@ -9,9 +9,13 @@ function App() {
     <BrowserRouter>
       <Header />
         <Routes>
-          <Route path="/netflex-clone" element={<Home />} />
-          <Route path="/netflex-clone/tv" element={<Tv />} />
+          <Route path="/netflex-clone/tv" element={<Tv />}>
+            <Route path="/netflex-clone/tv/:tvId" element={<Tv />}/>
+          </Route>
           <Route path="/netflex-clone/search" element={<Search />} />
+          <Route path="/netflex-clone" element={<Home />}>
+            <Route path="/netflex-clone/movies/:movieId" element={<Home />}/>
+          </Route>
         </Routes>
     </BrowserRouter>
   );
